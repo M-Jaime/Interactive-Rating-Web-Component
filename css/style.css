@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap');
+
+*{
+    font-family: "Varela Round", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+    border: none;
+}
+::selection{
+    background: #ff8800;
+    color: white;
+}
+body{
+    height: 100dvh;
+    width: 100%;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background: #1f1f1f;
+}
+.container .card{
+    position: relative;
+    width: 300px;
+    padding: 2em;
+    background: #212836;
+    border-radius: 20px;
+}
+
+.card .rating__state {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    
+}
+
+.rating__state.closed{
+    opacity: 0;
+    pointer-events: none;
+}
+.card .close__btn{
+    font-size: 1.5em;
+    color: rgba(255,255,255,.5);
+    position: absolute;
+    z-index: 100;
+    top: 20px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 80px;
+    display: grid;
+    place-items: center;
+}
+.card .close__btn:hover{
+    background: rgba(255,255,255,.1);
+}
+
+.rating__state .img {
+    background: rgba(255,255,255,.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+}
+.rating__state .text{
+    color: white;
+}
+.rating__state .text .subtitle{
+    font-size: 1.5em;
+    margin-bottom: .6em;
+}
+.rating__state .text p{
+    font-size: .8em;
+    opacity: .5;
+    line-height: 1.6;
+}
+.rating__state .rating__numbers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+}
+.rating__numbers .number{
+    color: white;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    cursor: pointer;
+    transition: 100ms ease;
+    font-size: .9em;
+}
+.rating__numbers .selected{
+    background: white;
+    color: #1f1f1f;
+    font-weight: bold;
+}
+.rating__numbers .selected:hover{
+    background-color: white !important;
+    color: #1f1f1f !important;
+}
+
+.rating__numbers .number:hover{
+    background: #ff8800;
+    color: #1f1f1f;
+}
+
+.rating__state .submit .submit__btn{
+    text-transform: uppercase;
+    background: #ff8800;
+    padding-block: 1em;
+    border: none;
+    border-radius: 2em;
+    width: 100%;
+    font-weight: 600;
+    font-size: .7em;
+    letter-spacing: 1.2px;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    cursor: pointer;
+    border: 3px solid #ff8800;
+}
+.rating__state .submit .submit__btn.disabled{
+    background: rgba(255,255,255,.3);
+    border: 3px solid rgba(255,255,255,.5);
+    opacity: .3;
+    pointer-events: none;
+}
+
+
+.card .thank-you__state{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    color: white;
+    padding: 2em;
+    background: #212836;
+    text-align: center;
+    border-radius: 20px;
+    display: none;
+    
+}
+.thank-you__state.open{
+    display: flex;
+}
+.thank-you__state .img {
+    margin-bottom: .8em;
+}
+.thank-you__state span{
+    background: rgba(0,0,0,.2);
+    padding: .2em 1.2em;
+    border-radius: 4em;
+    color: #ff8800;
+}
+
+.thank-you__state .subtitle{
+    margin-bottom: .6em;
+    font-size: 1.5em;
+}
+.thank-you__state p{
+    font-size: .8em;
+    line-height: 1.6;
+    opacity: .6;
+}
+
+@media (max-width : 400px){
+    .container .card{
+        width: 70%;
+        padding: 1.8em;
+    }
+    .card .thank-you__state{
+       width: 80%;
+    }
+    
+}
+@media (max-width : 300px){
+    .rating__numbers .number{
+        width: 35px;
+        height: 35px;
+        font-size: .8em;
+        margin-inline: .7em;
+    }
+}
